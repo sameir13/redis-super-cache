@@ -1,4 +1,4 @@
-# Tagcache API Reference
+# Redis Super Cache API Reference
 
 Generated with [TypeDoc](https://typedoc.org/).
 
@@ -14,7 +14,7 @@ Output is written to `docs/api/`.
 - `warmCache`, `metricsEndpoint`
 - `CacheConnectionError`, `CacheCompressionError`, `CacheSerializationError`
 
-## NestJS exports (`@tagcache/nestjs`)
+## NestJS exports (`redis-super-cache-nestjs`)
 
 - `TagCacheModule`
 - `InjectTagCache`

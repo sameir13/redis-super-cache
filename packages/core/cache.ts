@@ -305,7 +305,7 @@ export class TagCache {
 
     if (this.logger) {
       this.logger.warn(
-        `[tagcache] ${operation} error (${errorType}):`,
+        `[redis-super-cache] ${operation} error (${errorType}):`,
         err
       );
     }

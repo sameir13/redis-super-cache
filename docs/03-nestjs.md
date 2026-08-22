@@ -12,7 +12,7 @@ You will learn:
 
 ```ts
 import { Module } from "@nestjs/common";
-import { TagCacheModule } from "@tagcache/nestjs";
+import { TagCacheModule } from "redis-super-cache-nestjs";
 
 @Module({
   imports: [
@@ -48,8 +48,8 @@ TagCacheModule.forRootAsync({
 
 ```ts
 import { Injectable } from "@nestjs/common";
-import { InjectTagCache } from "@tagcache/nestjs";
-import type { TagCache } from "tagcache";
+import { InjectTagCache } from "redis-super-cache-nestjs";
+import type { TagCache } from "redis-super-cache";
 
 @Injectable()
 export class UsersService {

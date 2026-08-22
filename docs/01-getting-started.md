@@ -1,14 +1,14 @@
-# Getting started with Tagcache
+# Getting started with Redis Super Cache
 
 You will learn:
 
-- What Tagcache is and when to use it
+- What `redis-super-cache` is and when to use it
 - How to run Redis locally
 - Which step-by-step guide to follow for your stack
 
-## What is Tagcache?
+## What is Redis Super Cache?
 
-Tagcache is a **production Redis cache layer** for Node.js. You call `wrap()` to cache database results, tag keys for bulk invalidation, and get compression, metrics, and stampede protection without building them yourself.
+`redis-super-cache` is a **production Redis cache layer** for Node.js. You call `wrap()` to cache database results, tag keys for bulk invalidation, and get compression, metrics, and stampede protection without building them yourself.
 
 **Tagline:** Production Redis caching — wrap, tag, invalidate.
 
@@ -25,13 +25,13 @@ Tagcache is a **production Redis cache layer** for Node.js. You call `wrap()` to
 Using Docker (recommended):
 
 ```bash
-docker run -d --name tagcache-redis -p 6379:6379 redis:7-alpine
+docker run -d --name redis-super-cache-redis -p 6379:6379 redis:7-alpine
 ```
 
 Verify Redis is running:
 
 ```bash
-docker exec tagcache-redis redis-cli ping
+docker exec redis-super-cache-redis redis-cli ping
 # Expected: PONG
 ```
 
@@ -49,20 +49,20 @@ Choose the guide that matches your project. Each guide is a **full walkthrough**
 |---|---|---|
 | [Node.js guide](./guides/nodejs.md) | Vanilla Node.js (`http` module) | Small API with cache-aside, tags, metrics |
 | [Express guide](./guides/express.md) | Express.js | REST API with users CRUD + cache invalidation |
-| [NestJS guide](./guides/nestjs.md) | NestJS + `@tagcache/nestjs` | Module, decorators, warmup, `/metrics` |
+| [NestJS guide](./guides/nestjs.md) | NestJS + `redis-super-cache-nestjs` | Module, decorators, warmup, `/metrics` |
 
 ## Step 3 — Install packages
 
 **Node.js or Express:**
 
 ```bash
-npm install tagcache redis
+npm install redis-super-cache redis
 ```
 
 **NestJS:**
 
 ```bash
-npm install tagcache @tagcache/nestjs redis
+npm install redis-super-cache redis-super-cache-nestjs redis
 ```
 
 ## Core concept (30 seconds)
@@ -103,9 +103,9 @@ await cache.invalidateTag("users");
 | [Benchmarks](./11-benchmarks.md) | Performance notes |
 | [API reference](./api/README.md) | TypeDoc |
 
-## When to use Tagcache vs alternatives
+## When to use Redis Super Cache vs alternatives
 
-| Use Tagcache | Use something else |
+| Use redis-super-cache | Use something else |
 |---|---|
 | Redis production caching with tags | Tiered memory + Redis → `cache-manager` |
 | Service-level caching in NestJS | HTTP-only caching → `@nestjs/cache-manager` |

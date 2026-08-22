@@ -1,10 +1,15 @@
 # Changelog
 
+## 2.0.1
+
+- Fix npm README (full docs links, GitHub badges, repository metadata)
+- Sync `packages/core/README.md` with root README on publish
+
 ## 2.0.0
 
 ### Breaking changes
 
-- Rebranded from `redis-super-cache` to **Tagcache**
+- Rebranded internal API as **TagCache** while keeping npm name `redis-super-cache`
 - `SuperCache` → `TagCache` (`SuperCache` kept as deprecated alias)
 - `createCache()` → `createTagCache()` (deprecated alias kept)
 - Default key prefix changed from `sc` to `tc`
@@ -20,7 +25,7 @@
 - Per-instance Prometheus `metricsRegistry`
 - `RedisCacheClient` abstraction
 - Warmup `force` option and true skip-if-exists
-- `@tagcache/nestjs` with `TagCacheModule`, decorators, metrics controller
+- `redis-super-cache-nestjs` with `TagCacheModule`, decorators, metrics controller
 - Monorepo structure, CI, integration tests, full docs
 
 ### Fixed

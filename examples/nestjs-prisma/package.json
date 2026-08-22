@@ -1,5 +1,5 @@
 {
-  "name": "tagcache-nestjs-example",
+  "name": "redis-super-cache-nestjs-example",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -9,10 +9,10 @@
     "@nestjs/common": "^10.4.0",
     "@nestjs/core": "^10.4.0",
     "@nestjs/platform-express": "^10.4.0",
-    "@tagcache/nestjs": "*",
+    "redis-super-cache-nestjs": "*",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.0",
-    "tagcache": "*"
+    "redis-super-cache": "*"
   },
   "devDependencies": {
     "ts-node": "^10.9.0",

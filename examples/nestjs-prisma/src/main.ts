@@ -6,8 +6,8 @@ import {
   InjectTagCache,
   Cacheable,
   CacheEvict,
-} from "@tagcache/nestjs";
-import type { TagCache } from "tagcache";
+} from "redis-super-cache-nestjs";
+import type { TagCache } from "redis-super-cache";
 
 @Injectable()
 class UsersService {

@@ -6,11 +6,10 @@ You will learn:
 - How to migrate from `cache-manager`
 - How to migrate from hand-rolled Redis
 
-## From redis-super-cache 1.x
+## From redis-super-cache 1.x → 2.0
 
 ```bash
-npm uninstall redis-super-cache
-npm install tagcache
+npm install redis-super-cache@latest
 ```
 
 | Old | New |
@@ -24,7 +23,7 @@ Invalidate old tags once after deploy, or accept orphaned tag sets.
 
 ## From cache-manager
 
-Tagcache is **Redis-only** and not a drop-in replacement.
+`redis-super-cache` is **Redis-only** and not a drop-in replacement.
 
 Replace:
 
@@ -44,7 +43,7 @@ Use cache-manager if you need memory + Redis tiered caching.
 
 ## From hand-rolled Redis
 
-Tagcache replaces manual:
+`redis-super-cache` replaces manual:
 
 - Compression → built-in
 - Metrics → built-in

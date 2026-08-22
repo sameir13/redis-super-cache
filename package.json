@@ -1,15 +1,15 @@
 {
-  "name": "tagcache-monorepo",
+  "name": "redis-super-cache-monorepo",
   "private": true,
   "workspaces": [
     "packages/*",
     "examples/*"
   ],
   "scripts": {
-    "build": "npm run build -w tagcache && npm run build -w @tagcache/nestjs",
-    "test": "npm run test -w tagcache && npm run test -w @tagcache/nestjs",
-    "test:coverage": "npm run test:coverage -w tagcache",
-    "test:integration": "npm run test:integration -w tagcache"
+    "build": "npm run build -w redis-super-cache && npm run build -w redis-super-cache-nestjs",
+    "test": "npm run test -w redis-super-cache && npm run test -w redis-super-cache-nestjs",
+    "test:coverage": "npm run test:coverage -w redis-super-cache",
+    "test:integration": "npm run test:integration -w redis-super-cache"
   },
   "license": "MIT"
 }

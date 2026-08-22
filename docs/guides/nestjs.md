@@ -7,7 +7,7 @@ You will learn:
 - How to enable metrics, warmup, and async configuration
 
 **Time:** ~30 minutes  
-**Stack:** NestJS 10+, `@tagcache/nestjs`, Tagcache, Redis
+**Stack:** NestJS 10+, `redis-super-cache-nestjs`, Redis Super Cache, Redis
 
 ---
 
@@ -35,26 +35,26 @@ src/
 
 ```bash
 npm i -g @nestjs/cli
-nest new tagcache-nest-demo
-cd tagcache-nest-demo
+nest new redis-super-cache-nest-demo
+cd redis-super-cache-nest-demo
 ```
 
 Or manual setup:
 
 ```bash
-mkdir tagcache-nest-demo && cd tagcache-nest-demo
+mkdir redis-super-cache-nest-demo && cd redis-super-cache-nest-demo
 npm init -y
 npm install @nestjs/common @nestjs/core @nestjs/platform-express reflect-metadata rxjs
-npm install tagcache @tagcache/nestjs redis
+npm install redis-super-cache redis-super-cache-nestjs redis
 npm install -D typescript @types/node ts-node
 ```
 
 ---
 
-## Step 2 — Install Tagcache packages
+## Step 2 — Install redis-super-cache packages
 
 ```bash
-npm install tagcache @tagcache/nestjs redis
+npm install redis-super-cache redis-super-cache-nestjs redis
 ```
 
 ---
@@ -71,7 +71,7 @@ PORT=3000
 Start Redis:
 
 ```bash
-docker run -d --name tagcache-redis -p 6379:6379 redis:7-alpine
+docker run -d --name redis-super-cache-redis -p 6379:6379 redis:7-alpine
 ```
 
 ---
@@ -129,8 +129,8 @@ import {
   InjectTagCache,
   Cacheable,
   CacheEvict,
-} from "@tagcache/nestjs";
-import type { TagCache } from "tagcache";
+} from "redis-super-cache-nestjs";
+import type { TagCache } from "redis-super-cache";
 import { UsersRepository, User } from "./users.repository";
 
 @Injectable()
@@ -227,7 +227,7 @@ Create `src/app.module.ts`:
 
 ```ts
 import { Module } from "@nestjs/common";
-import { TagCacheModule } from "@tagcache/nestjs";
+import { TagCacheModule } from "redis-super-cache-nestjs";
 import { UsersModule } from "./users/users.module";
 
 @Module({
@@ -350,7 +350,7 @@ npm install @nestjs/config
 ```ts
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
-import { TagCacheModule } from "@tagcache/nestjs";
+import { TagCacheModule } from "redis-super-cache-nestjs";
 
 @Module({
   imports: [
@@ -409,8 +409,8 @@ TagCacheModule.forRoot({
 
 ```ts
 import { Injectable } from "@nestjs/common";
-import { InjectTagCache } from "@tagcache/nestjs";
-import type { TagCache } from "tagcache";
+import { InjectTagCache } from "redis-super-cache-nestjs";
+import type { TagCache } from "redis-super-cache";
 
 @Injectable()
 export class ReportsService {
@@ -454,7 +454,7 @@ All `@Cacheable` calls use `wrap()` internally → **stampede protection include
 ## Full project tree
 
 ```text
-tagcache-nest-demo/
+redis-super-cache-nest-demo/
   src/
     main.ts
     app.module.ts

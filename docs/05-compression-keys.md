@@ -2,7 +2,7 @@
 
 You will learn:
 
-- How Tagcache saves Redis memory
+- How redis-super-cache saves Redis memory
 - How key hashing works
 - Multi-tenant key namespacing
 
@@ -45,7 +45,7 @@ Use a unique `namespace` per tenant in SaaS apps.
 ## Custom serializer
 
 ```ts
-import { jsonSerializer } from "tagcache";
+import { jsonSerializer } from "redis-super-cache";
 
 createTagCache({
   client,

@@ -1,10 +1,10 @@
 /**
- * Minimal Express + Tagcache example.
+ * Minimal Express + redis-super-cache example.
  * Run: REDIS_URL=redis://127.0.0.1:6379 npm start
  */
 const express = require("express");
 const { createClient } = require("redis");
-const { createTagCache } = require("tagcache");
+const { createTagCache } = require("redis-super-cache");
 
 async function main() {
   const client = createClient({ url: process.env.REDIS_URL ?? "redis://127.0.0.1:6379" });

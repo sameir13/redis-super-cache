@@ -89,7 +89,7 @@ await cache.cleanupTag("users");
 ## warmCache(cache, tasks)
 
 ```ts
-import { warmCache } from "tagcache";
+import { warmCache } from "redis-super-cache";
 
 await warmCache(cache, [
   { key: "config", worker: loadConfig, ttl: 86400, force: false },
@@ -99,6 +99,6 @@ await warmCache(cache, [
 ## metricsEndpoint()
 
 ```ts
-import { metricsEndpoint } from "tagcache";
+import { metricsEndpoint } from "redis-super-cache";
 const text = await metricsEndpoint();
 ```

@@ -1,14 +1,14 @@
 {
-  "name": "tagcache-express-basic",
+  "name": "redis-super-cache-express-basic",
   "private": true,
   "version": "1.0.0",
-  "description": "Minimal Express example for tagcache",
+  "description": "Minimal Express example for redis-super-cache",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.19.0",
     "redis": "^4.6.0",
-    "tagcache": "*"
+    "redis-super-cache": "*"
   }
 }

@@ -13,7 +13,7 @@ Cold starts cause DB spikes when traffic hits before caches are populated. Warmu
 ## Basic usage
 
 ```ts
-import { warmCache } from "tagcache";
+import { warmCache } from "redis-super-cache";
 
 await warmCache(cache, [
   { key: "home:featured", worker: getFeatured, ttl: 3600 },

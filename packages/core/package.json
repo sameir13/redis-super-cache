@@ -1,6 +1,6 @@
 {
-  "name": "tagcache",
-  "version": "2.0.0",
+  "name": "redis-super-cache",
+  "version": "2.0.1",
   "description": "Production Redis caching with fflate compression, tag invalidation, stampede protection, pipelines, warmup, and Prometheus metrics",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -18,12 +18,12 @@
     "test": "jest --runInBand",
     "test:coverage": "jest --coverage --runInBand",
     "test:integration": "jest --runInBand --config jest.integration.config.js",
-    "prepublishOnly": "npm run build:clean && npm run test"
+    "prepublishOnly": "cp ../../README.md README.md && npm run build:clean && npm run test"
   },
   "keywords": [
     "redis",
     "cache",
-    "tagcache",
+    "redis-super-cache",
     "compression",
     "tags",
     "invalidation",
@@ -36,12 +36,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sameir13/tagcache.git"
+    "url": "git+https://github.com/sameir13/redis-super-cache.git"
   },
   "bugs": {
-    "url": "https://github.com/sameir13/tagcache/issues"
+    "url": "https://github.com/sameir13/redis-super-cache/issues"
   },
-  "homepage": "https://github.com/sameir13/tagcache#readme",
+  "homepage": "https://github.com/sameir13/redis-super-cache#readme",
   "engines": {
     "node": ">=18.0.0"
   },

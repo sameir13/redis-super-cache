@@ -23,7 +23,7 @@ Threshold default: 1024 bytes.
 | Approach | Round trips |
 |---|---|
 | Without pipeline | 3 |
-| Tagcache pipeline | 1 |
+| redis-super-cache pipeline | 1 |
 
 At 50 ms RTT, saves ~100 ms per write.
 
@@ -38,7 +38,7 @@ At 50 ms RTT, saves ~100 ms per write.
 
 Concurrent `wrap()` on the same key:
 
-| Without singleflight | With Tagcache |
+| Without singleflight | With redis-super-cache |
 |---|---|
 | N concurrent DB calls | 1 DB call |
 
@@ -49,5 +49,5 @@ Concurrent `wrap()` on the same key:
 docker run -d -p 6379:6379 redis:7-alpine
 
 # Run integration tests
-REDIS_URL=redis://127.0.0.1:6379 npm run test:integration -w tagcache
+REDIS_URL=redis://127.0.0.1:6379 npm run test:integration -w redis-super-cache
 ```

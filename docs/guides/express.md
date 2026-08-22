@@ -2,12 +2,12 @@
 
 You will learn:
 
-- How to integrate Tagcache into an Express.js app
+- How to integrate redis-super-cache into an Express.js app
 - How to structure cache logic in routes and services
 - How to invalidate caches after writes
 
 **Time:** ~20 minutes  
-**Stack:** Express 4, Tagcache, Redis
+**Stack:** Express 4, `redis-super-cache`, Redis
 
 ---
 
@@ -27,10 +27,10 @@ A REST API for users:
 ## Step 1 — Create the project
 
 ```bash
-mkdir tagcache-express-demo
-cd tagcache-express-demo
+mkdir redis-super-cache-express-demo
+cd redis-super-cache-express-demo
 npm init -y
-npm install express tagcache redis
+npm install express redis-super-cache redis
 npm pkg set type=module
 ```
 
@@ -46,7 +46,7 @@ export PORT=3000
 Start Redis if needed:
 
 ```bash
-docker run -d --name tagcache-redis -p 6379:6379 redis:7-alpine
+docker run -d --name redis-super-cache-redis -p 6379:6379 redis:7-alpine
 ```
 
 ---
@@ -54,7 +54,7 @@ docker run -d --name tagcache-redis -p 6379:6379 redis:7-alpine
 ## Step 3 — Project structure
 
 ```text
-tagcache-express-demo/
+redis-super-cache-express-demo/
   src/
     app.js           # Express app + routes
     cache.js         # TagCache singleton
@@ -99,7 +99,7 @@ Create `src/cache.js`:
 
 ```js
 import { createClient } from "redis";
-import { createTagCache, warmCache } from "tagcache";
+import { createTagCache, warmCache } from "redis-super-cache";
 
 let cache;
 let client;
@@ -184,7 +184,7 @@ Create `src/app.js`:
 
 ```js
 import express from "express";
-import { metricsEndpoint } from "tagcache";
+import { metricsEndpoint } from "redis-super-cache";
 import { setupCache, teardownCache } from "./cache.js";
 import * as usersService from "./users.service.js";
 

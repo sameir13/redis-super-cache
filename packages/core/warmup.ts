@@ -28,7 +28,7 @@ export async function warmCache(
       } catch (err) {
         if (logger) {
           logger.warn(
-            `[tagcache] Warmup failed for key "${task.key}":`,
+            `[redis-super-cache] Warmup failed for key "${task.key}":`,
             err
           );
         }
@@ -41,7 +41,7 @@ export async function warmCache(
     const failed = results.filter((r) => !r.success);
     if (failed.length > 0) {
       logger.warn(
-        `[tagcache] Warmup completed with ${failed.length}/${tasks.length} failures`
+        `[redis-super-cache] Warmup completed with ${failed.length}/${tasks.length} failures`
       );
     }
   }

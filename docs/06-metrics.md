@@ -2,7 +2,7 @@
 
 You will learn:
 
-- Which metrics Tagcache exports
+- Which metrics redis-super-cache exports
 - How to scrape with Prometheus
 - How to use a custom registry
 
@@ -20,7 +20,7 @@ You will learn:
 
 ```ts
 import express from "express";
-import { metricsEndpoint } from "tagcache";
+import { metricsEndpoint } from "redis-super-cache";
 
 app.get("/metrics", async (_req, res) => {
   res.set("Content-Type", "text/plain");
@@ -36,7 +36,7 @@ Enable `enableMetricsController: true` in `TagCacheModule.forRoot()`.
 
 ```ts
 import { Registry } from "prom-client";
-import { createTagCache, metricsEndpoint } from "tagcache";
+import { createTagCache, metricsEndpoint } from "redis-super-cache";
 
 const registry = new Registry();
 const cache = createTagCache({ client, metricsRegistry: registry });

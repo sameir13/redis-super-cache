@@ -2,12 +2,12 @@
 
 You will learn:
 
-- How to set up a vanilla Node.js project with Tagcache
+- How to set up a vanilla Node.js project with `redis-super-cache`
 - How to cache API responses with `wrap()`
 - How to invalidate by tag and expose Prometheus metrics
 
 **Time:** ~15 minutes  
-**Stack:** Node.js 18+, `http` module (no Express), Tagcache, Redis
+**Stack:** Node.js 18+, `http` module (no Express), `redis-super-cache`, Redis
 
 ---
 
@@ -26,10 +26,10 @@ A small HTTP API with two endpoints:
 ## Step 1 — Create the project
 
 ```bash
-mkdir tagcache-node-demo
-cd tagcache-node-demo
+mkdir redis-super-cache-node-demo
+cd redis-super-cache-node-demo
 npm init -y
-npm install tagcache redis
+npm install redis-super-cache redis
 ```
 
 Add `"type": "module"` for ESM imports (or use CommonJS — examples below use ESM):
@@ -89,13 +89,13 @@ export async function fetchProductsFromDb() {
 
 ---
 
-## Step 4 — Redis + Tagcache setup
+## Step 4 — Redis + cache setup
 
 Create `src/cache.js`:
 
 ```js
 import { createClient } from "redis";
-import { createTagCache } from "tagcache";
+import { createTagCache } from "redis-super-cache";
 
 let cache;
 let redisClient;
@@ -154,7 +154,7 @@ Create `src/server.js`:
 
 ```js
 import http from "node:http";
-import { metricsEndpoint } from "tagcache";
+import { metricsEndpoint } from "redis-super-cache";
 import { fetchProductsFromDb } from "./db.js";
 import { getCache, initCache, closeCache } from "./cache.js";
 
@@ -300,7 +300,7 @@ const p1 = map.get("product:1");
 ### Warm cache on startup
 
 ```js
-import { warmCache } from "tagcache";
+import { warmCache } from "redis-super-cache";
 
 await warmCache(cache, [
   {
@@ -317,7 +317,7 @@ await warmCache(cache, [
 ## Project structure (final)
 
 ```text
-tagcache-node-demo/
+redis-super-cache-node-demo/
   package.json
   src/
     db.js       # fake database

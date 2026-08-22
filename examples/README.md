@@ -1,4 +1,4 @@
-# Tagcache examples
+# Redis Super Cache examples
 
 Runnable examples aligned with the step-by-step docs.
 
