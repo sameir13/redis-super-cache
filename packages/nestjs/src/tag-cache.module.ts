@@ -12,7 +12,7 @@ import {
   type TagCache,
   type WarmTask,
   type CacheConfig,
-} from "tagcache";
+} from "redis-super-cache";
 import {
   TAG_CACHE,
   TAG_CACHE_MODULE_OPTIONS,

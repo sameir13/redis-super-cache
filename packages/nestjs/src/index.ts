@@ -24,5 +24,5 @@ export {
   CacheConnectionError,
   CacheCompressionError,
   CacheSerializationError,
-} from "tagcache";
-export type { CacheConfig, CacheOptions, WarmTask } from "tagcache";
+} from "redis-super-cache";
+export type { CacheConfig, CacheOptions, WarmTask } from "redis-super-cache";

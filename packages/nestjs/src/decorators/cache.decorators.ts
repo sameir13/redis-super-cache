@@ -1,7 +1,7 @@
-import type { CacheOptions } from "tagcache";
+import type { CacheOptions } from "redis-super-cache";
 
 export interface CacheableHost {
-  tagCache?: import("tagcache").TagCache;
+  tagCache?: import("redis-super-cache").TagCache;
 }
 
 export interface CacheableOptions extends CacheOptions {
