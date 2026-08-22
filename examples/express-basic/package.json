@@ -1,0 +1,14 @@
+{
+  "name": "tagcache-express-basic",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Minimal Express example for tagcache",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.0",
+    "redis": "^4.6.0",
+    "tagcache": "*"
+  }
+}

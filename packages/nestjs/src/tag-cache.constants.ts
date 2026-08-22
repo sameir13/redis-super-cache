@@ -1,0 +1,2 @@
+export const TAG_CACHE = "TAG_CACHE";
+export const TAG_CACHE_MODULE_OPTIONS = "TAG_CACHE_MODULE_OPTIONS";

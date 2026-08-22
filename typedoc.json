@@ -1,0 +1,9 @@
+{
+  "extends": "../../packages/core/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./api",
+    "rootDir": "../../packages"
+  },
+  "include": ["../../packages/core/*.ts", "../../packages/nestjs/src/**/*.ts"],
+  "exclude": ["**/*.test.ts", "**/dist/**", "**/node_modules/**"]
+}
